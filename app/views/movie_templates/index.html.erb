@@ -4,7 +4,7 @@
 
 <form action="/insert_movie_record" method="post">
   <div>
-    <lablel for="title_field">Title</label>
+    <lablel for="title_field">Title </label>
     <input id="title_field" type="text" name="the_title">
   </div>
   
@@ -24,7 +24,7 @@
   </div>
   
   <div>
-    <lablel for="image_field">Image</label>
+    <lablel for="image_field">Image </label>
     <input id="image_field" type="text" name="the_image">
   </div>
   
@@ -94,6 +94,12 @@
       <% the_director = matching_directors.at(0) %>
 
       <%= the_director.name %>
+
+      <% if the_director == nil %>
+        Uh oh! We weren't able to find a director for this movie. 
+      <% else %>
+        <%= the_director.name %>
+      <% end %>
     </td>
 
     <td>
