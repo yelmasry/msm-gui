@@ -52,7 +52,7 @@ class ActorsController < ApplicationController
 
     the_actor.save 
 
-    redirect_to("/actors/#{the_actor.id}")
+    redirect_to("/actors/#{an_actor.id}")
   end 
 
 end

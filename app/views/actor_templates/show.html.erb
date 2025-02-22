@@ -8,6 +8,11 @@
 
 <hr>
 
+<div>
+  <a href="/delete_actor/<%=@the_actor.id %>">Delete actor</a>
+</div>
+
+
 <form action="/modify_actor_record/<%= @the_actor.id %>" method="post">
   <div>
     <label for="name_field">Name</label>
@@ -67,6 +72,20 @@
   </dt>
   <dd>
     <img src="<%= @the_actor.image %>" style="width:250px;">
+  </dd>
+
+  <dt>
+    Created at
+  </dt>
+  <dd>
+    <%= @the_actor.created_at %>
+  </dd>
+
+  <dt>
+    Updated at
+  </dt>
+  <dd>
+    <%= @the_actor.updated_at %>
   </dd>
 
   <dt>

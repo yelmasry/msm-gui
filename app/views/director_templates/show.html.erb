@@ -6,6 +6,10 @@
   Go back
 </a>
 
+<div>
+  <a href="/delete_director/<%=@the_director.id %>">Delete director</a>
+</div>
+
 <hr>
 
 <form action="/modify_director_record/<%= @the_director.id %>" method="post">
@@ -79,6 +83,21 @@
   <dd>
     <%= @the_director.updated_at %>
   </dd>
+
+  <dt>
+    Created at
+  </dt>
+  <dd>
+    <%= @the_director.created_at %>
+  </dd>
+
+  <dt>
+    Updated at
+  </dt>
+  <dd>
+    <%= @the_director.updated_at %>
+  </dd>
+
 </dl>
 
 <hr>
