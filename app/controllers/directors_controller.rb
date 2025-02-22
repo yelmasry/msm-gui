@@ -36,4 +36,45 @@ class DirectorsController < ApplicationController
 
     render({ :template => "director_templates/eldest" })
   end
+
+  def create
+    m = Director.new
+    m.name = params.fetch("the_name")
+    m.dob = params.fetch("the_dob")
+    m.bio = params.fetch("the_bio")
+    m.image = params.fetch("the_image")
+
+    m.save 
+
+    redirect_to("/directors")
+  end 
+
+  def destroy  
+    the_id = params.fetch("an_id")
+
+    matching_records = Director.where({ :id => the_id})
+
+    the_director = matching_records.at(0)
+
+    the_director.destroy 
+
+    redirect_to("/directors")
+  end 
+
+  def update 
+    m_id = params.fetch("the_id")
+
+    matching_records = Director.where({ :id => m_id})
+    the_director = matching_records.at(0) 
+
+    the_director.name = params.fetch("the_name")
+    the_movie.dob = params.fetch("the_dob")
+    the_movie.bio = params.fetch("the_bio")
+    the_movie.image = params.fetch("the_image")
+
+    the_movie.save 
+
+    redirect_to("/directors/#{the_director.id}")
+  end 
+
 end
