@@ -68,11 +68,11 @@ class DirectorsController < ApplicationController
     the_director = matching_records.at(0) 
 
     the_director.name = params.fetch("the_name")
-    the_movie.dob = params.fetch("the_dob")
-    the_movie.bio = params.fetch("the_bio")
-    the_movie.image = params.fetch("the_image")
+    the_director.dob = params.fetch("the_dob")
+    the_director.bio = params.fetch("the_bio")
+    the_director.image = params.fetch("the_image")
 
-    the_movie.save 
+    the_director.save 
 
     redirect_to("/directors/#{the_director.id}")
   end 

@@ -45,14 +45,15 @@ class ActorsController < ApplicationController
     matching_records = Actor.where({ :id => m_id})
     the_actor = matching_records.at(0) 
 
-    m.name = params.fetch("the_name")
-    m.dob = params.fetch("the_dob")
-    m.bio = params.fetch("the_bio")
-    m.image = params.fetch("the_image")
+
+    the_actor.name = params.fetch("the_name")
+    the_actor.dob = params.fetch("the_dob")
+    the_actor.bio = params.fetch("the_bio")
+    the_actor.image = params.fetch("the_image")
 
     the_actor.save 
 
-    redirect_to("/actors/#{an_actor.id}")
+    redirect_to("/actors/#{the_actor.id}")
   end 
 
 end
